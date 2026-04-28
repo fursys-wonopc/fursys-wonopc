@@ -1883,17 +1883,17 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
           <div class="form-row">
             <div class="form-field">
               <label>회사명 *</label>
-              <input type="text" name="회사명" placeholder="(주)회사명" required/>
+              <input type="text" id="f-company" name="회사명" placeholder="(주)회사명" required/>
             </div>
             <div class="form-field">
               <label>담당자명 *</label>
-              <input type="text" name="담당자명" placeholder="예) 김총무 팀장" required/>
+              <input type="text" id="f-name" name="담당자명" placeholder="예) 김총무 팀장" required/>
             </div>
           </div>
           <div class="form-row">
             <div class="form-field">
               <label>연락처 *</label>
-              <input type="tel" name="연락처" placeholder="010-0000-0000" required/>
+              <input type="tel" id="f-phone" name="연락처" placeholder="010-0000-0000" required/>
             </div>
             <div class="form-field">
               <label>이메일</label>
@@ -2002,7 +2002,9 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 
 
-// 상담 폼 제출 (Formspree 연동)
+// 상담 폼 제출 (Google Apps Script 연동)
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzA1M11zfoMOMfjaF2P7zJocxqR9wMSABEoKpaAwPKB9_xPu6O6KWG81brDLTFSN0fP/exec';
+
 async function handleSubmit(e){
   e.preventDefault();
   const company=document.getElementById('f-company').value.trim();
@@ -2015,25 +2017,21 @@ async function handleSubmit(e){
   const btn=e.target.querySelector('.form-submit');
   btn.textContent='전송 중...';
   btn.disabled=true;
+
   try{
-    const res=await fetch(e.target.action,{
+    const formData=new FormData(e.target);
+    await fetch(APPS_SCRIPT_URL,{
       method:'POST',
-      body:new FormData(e.target),
-      headers:{'Accept':'application/json'}
+      body:formData,
+      mode:'no-cors'
     });
-    if(res.ok){
-      document.getElementById('contact-form').style.display='none';
-      document.getElementById('form-success').style.display='block';
-    } else {
-      alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
-      btn.textContent='상담 신청하기';
-      btn.disabled=false;
-    }
   } catch(err){
-    alert('네트워크 오류가 발생했습니다. 전화로 문의해주세요. 010-7104-2155');
-    btn.textContent='상담 신청하기';
-    btn.disabled=false;
+    console.log('전송 오류:', err);
   }
+
+  // 성공 화면 표시 (항상)
+  document.getElementById('contact-form').style.display='none';
+  document.getElementById('form-success').style.display='block';
 }
 
 // 폼 초기화
