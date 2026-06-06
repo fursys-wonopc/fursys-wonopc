@@ -506,6 +506,76 @@ nav.scrolled{background:#FFFFFF;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 .cat-card:hover 
 
 
+/* ── CASES (납품 사례) ── */
+#cases{background:var(--cream)}
+.cases-inner{max-width:1200px;margin:0 auto;padding:100px 60px}
+.cases-carousel-wrap{position:relative}
+.cases-grid{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding-bottom:8px;
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+.cases-grid::-webkit-scrollbar{display:none}
+.case-card{
+  display:block;
+  text-decoration:none;
+  background:#FFFFFF;
+  border:none;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+  transition:transform .18s,box-shadow .22s;
+  border-bottom:3px solid transparent;
+  flex:0 0 calc((100% - 32px) / 3);
+  scroll-snap-align:start;
+}
+.case-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(0,0,0,.15);
+  border-bottom-color:var(--gold);
+}
+.case-thumb{
+  width:100%;height:200px;
+  background:#1A1A1A;
+  position:relative;overflow:hidden;
+}
+.case-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.case-card:hover .case-thumb img{transform:scale(1.04)}
+.case-label{
+  position:absolute;top:16px;left:16px;
+  background:var(--gold);color:#FFFFFF;
+  font-size:11px;font-weight:700;letter-spacing:.05em;
+  padding:5px 12px;border-radius:14px;z-index:2;
+}
+.case-body{padding:24px 24px 28px}
+.case-title{font-size:17px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px}
+.case-desc{font-size:13px;color:var(--gray3);line-height:1.7;margin-bottom:14px;word-break:keep-all}
+.case-products{font-size:12px;color:var(--gray4);line-height:1.6;border-top:1px solid #EEEEEE;padding-top:12px}
+.case-products strong{color:var(--gold);font-weight:500}
+/* 캐러셀 화살표 */
+.cases-arrow{
+  position:absolute;top:100px;
+  width:44px;height:44px;border-radius:50%;
+  background:#FFFFFF;border:1px solid #E0E0E0;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:5;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  transition:all .2s;font-size:18px;color:var(--navy);
+}
+.cases-arrow:hover{background:var(--gold);color:#FFFFFF;border-color:var(--gold)}
+.cases-arrow.prev{left:-12px}
+.cases-arrow.next{right:-12px}
+@media(max-width:900px){
+  .case-card{flex:0 0 85%}
+  .cases-inner{padding:60px 24px}
+  .cases-arrow{display:none}
+}
+
 /* ── PROCESS ── */
 #process{background:#FFFFFF}
 .process-inner{max-width:1200px;margin:0 auto;padding:100px 60px}
@@ -1422,6 +1492,38 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
   .sec-h2{font-size:28px !important}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FurnitureStore",
+  "name": "원 OPC",
+  "alternateName": "퍼시스 공식 대리점 원 OPC",
+  "description": "원 OPC는 퍼시스(FURSYS) 공식 대리점으로, 서울·경기·인천 수도권 전역의 중소기업·중견기업·대기업을 대상으로 사무가구 납품과 공간 컨설팅을 제공합니다. 임원실·중역공간·회의실·사무공간 구축, 레이아웃 제안, 납품·설치·AS까지 원스톱으로 진행합니다.",
+  "url": "https://www.fursys-wonopc.com",
+  "telephone": "+82-2-6072-0531",
+  "image": "https://www.fursys-wonopc.com/images/case-hj.jpg",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "고덕비즈밸리로 26 A동 1312호",
+    "addressLocality": "강동구",
+    "addressRegion": "서울",
+    "addressCountry": "KR"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "서울" },
+    { "@type": "State", "name": "경기도" },
+    { "@type": "City", "name": "인천" }
+  ],
+  "brand": { "@type": "Brand", "name": "퍼시스 FURSYS" },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "사무환경 컨설팅" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "공간 레이아웃 제안" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "사무가구 납품 및 설치" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "임원실·중역공간 구축" } }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1453,6 +1555,7 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
   <div class="nav-links">
     <a href="#about">회사소개</a>
     <a href="#products">제품</a>
+    <a href="#cases">납품 사례</a>
     <a href="#process">주문 프로세스</a>
     <a href="#consult" class="nav-cta">상담 문의</a>
   </div>
@@ -1466,6 +1569,7 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
   <div class="mm-inner">
     <a href="#about" onclick="closeMenu()">회사소개</a>
         <a href="#products" onclick="closeMenu()">제품</a>
+    <a href="#cases" onclick="closeMenu()">납품 사례</a>
     <a href="#process" onclick="closeMenu()">프로세스</a>
     <a href="#consult" onclick="closeMenu()" class="mm-cta">상담 문의</a>
   </div>
@@ -1771,6 +1875,74 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
         <span class="cat-cta-sub">planning.fursys.com에서 퍼시스 전 라인업을 확인하세요</span>
       </div>
       
+    </a>
+
+  </div>
+</section>
+
+<!-- ── CASES (납품 사례) ── -->
+<section id="cases">
+  <div class="cases-inner">
+
+    <div class="reveal" style="text-align:center;margin-bottom:52px">
+      <h2 class="services-title" style="font-size:36px;font-weight:700">납품 현장 사례</h2>
+      <p class="services-subtitle">원 OPC가 직접 진행한 수도권 기업 사무공간 구축 사례입니다.</p>
+    </div>
+
+    <div class="cases-carousel-wrap reveal">
+    <button class="cases-arrow prev" onclick="scrollCases(-1)" aria-label="이전">‹</button>
+    <button class="cases-arrow next" onclick="scrollCases(1)" aria-label="다음">›</button>
+    <div class="cases-grid" id="cases-grid">
+
+      <!-- 사례 1: 중공업 대기업 임원실 -->
+      <a href="https://blog.naver.com/wonopc_official" target="_blank" class="case-card">
+        <div class="case-thumb">
+          <span class="case-label">임원실</span>
+          <img src="images/case-hj.jpg" alt="중공업 계열 대기업 임원실 퍼시스 인콘트로 중역 책상 회의 테이블 납품 사례" loading="lazy"/>
+        </div>
+        <div class="case-body">
+          <div class="case-title">중공업 계열 대기업 임원실</div>
+          <p class="case-desc">신축 사옥 임원실에 무게감 있는 중역 공간을 구성했습니다. 중역 책상과 회의 테이블의 소재·컬러를 완전히 통일해 하나의 공간처럼 완성했습니다.</p>
+          <div class="case-products">납품 제품 · <strong>퍼시스 인콘트로(INCONTO)</strong> 중역 책상 · 회의 테이블</div>
+        </div>
+      </a>
+
+      <!-- 사례 2: 식품·외식 대기업 대표이사실 -->
+      <a href="https://blog.naver.com/wonopc_official" target="_blank" class="case-card">
+        <div class="case-thumb">
+          <span class="case-label">대표이사실</span>
+          <img src="images/case-food.jpg" alt="식품 외식 계열 대기업 대표이사실 밝은 오크 회의 테이블 그레이 의자 납품 사례" loading="lazy"/>
+        </div>
+        <div class="case-body">
+          <div class="case-title">식품·외식 계열 대기업 대표이사실</div>
+          <p class="case-desc">집무 공간과 회의 공간이 함께 있는 대표이사실을 밝은 오크 톤으로 구성했습니다. 빌트인 배선 슬롯으로 회의 환경의 완성도를 높였습니다.</p>
+          <div class="case-products">납품 제품 · <strong>밝은 오크 회의 테이블 · 그레이 메시 의자</strong></div>
+        </div>
+      </a>
+
+      <!-- 사례 3: 자산운용사 사무실 전체 -->
+      <a href="https://blog.naver.com/wonopc_official" target="_blank" class="case-card">
+        <div class="case-thumb">
+          <span class="case-label">사무실 전체</span>
+          <img src="images/case-fund.jpg" alt="성장하는 자산운용사 사무실 이전 업무공간 중역실 회의실 휴게실 전체 가구 납품 사례" loading="lazy"/>
+        </div>
+        <div class="case-body">
+          <div class="case-title">성장하는 자산운용사 사무실 전체 구축</div>
+          <p class="case-desc">사무실 이전에 맞춰 업무 공간·중역실·회의실·휴게 공간 전체를 구성했습니다. 가구 납품을 넘어 공간 전체의 톤과 동선을 함께 설계했습니다.</p>
+          <div class="case-products">납품 제품 · <strong>인에이블 책상 · 인라이트 파티션 · CH4300 · 맨하탄 · T90</strong></div>
+        </div>
+      </a>
+
+    </div>
+    </div>
+
+    <!-- 블로그 전체 보기 -->
+    <a href="https://blog.naver.com/wonopc_official" target="_blank" class="cat-cta-full" style="margin-top:16px">
+      <div class="cat-cta-left">
+        <span class="cat-cta-label">WON OPC NAVER BLOG</span>
+        <span class="cat-cta-title">전체 납품 사례 보기</span>
+        <span class="cat-cta-sub">원 OPC 블로그에서 더 많은 납품 현장을 확인하세요</span>
+      </div>
     </a>
 
   </div>
@@ -2123,6 +2295,15 @@ function closeMenu(){
   document.querySelector('.nav-hamburger').classList.remove('open');
   document.getElementById('mobile-menu').classList.remove('open');
   document.body.style.overflow='';
+}
+
+// 납품 사례 캐러셀 스크롤
+function scrollCases(dir){
+  const grid=document.getElementById('cases-grid');
+  if(!grid)return;
+  const card=grid.querySelector('.case-card');
+  const step=card?(card.offsetWidth+16):360;
+  grid.scrollBy({left:dir*step,behavior:'smooth'});
 }
 
 // 전화 클릭 GA4 추적
