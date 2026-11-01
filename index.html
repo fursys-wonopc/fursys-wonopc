@@ -6,9 +6,9 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>원 OPC</title>
-<meta name="description" content="원 OPC는 퍼시스(FURSYS) 공식 대리점입니다. 서울·경기·인천 수도권 전역 사무가구 납품, 임원실·회의실·사무공간 구축, 레이아웃 제안부터 설치·AS까지 원스톱으로 제공합니다. 견적 문의 02-6072-0531.">
-<meta name="keywords" content="퍼시스, 퍼시스대리점, 퍼시스공식대리점, 사무가구, 오피스가구, 임원실가구, 회의테이블, 사무실가구, 수도권사무가구, 사무환경컨설팅, 원OPC">
+<title>원 OPC | 퍼시스 공식 대리점 · 사무가구 납품·구독</title>
+<meta name="description" content="원 OPC는 퍼시스 공식 대리점입니다. 수도권 사무가구 납품·설치와 월 단위 사무가구 구독(렌탈)을 제공합니다. 상담 문의 02-6072-0531.">
+<meta name="keywords" content="퍼시스, 퍼시스대리점, 퍼시스공식대리점, 사무가구, 오피스가구, 임원실가구, 회의테이블, 사무실가구, 수도권사무가구, 사무환경컨설팅, 사무가구구독, 사무가구렌탈, 원OPC">
 <link rel="canonical" href="https://www.fursys-wonopc.com/">
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" href="favicon.png?v=2">
@@ -16,7 +16,7 @@
 <!-- Open Graph (카카오톡·페이스북 공유 미리보기) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="원 OPC — 퍼시스 공식 대리점">
-<meta property="og:description" content="수도권 사무가구 납품·임원실·오피스 공간 컨설팅 전문. 퍼시스 공식 대리점 원 OPC. 견적 문의 02-6072-0531.">
+<meta property="og:description" content="수도권 사무가구 납품과 사무가구 구독(렌탈) 전문. 퍼시스 공식 대리점 원 OPC. 상담 문의 02-6072-0531.">
 <meta property="og:url" content="https://www.fursys-wonopc.com/">
 <meta property="og:image" content="https://www.fursys-wonopc.com/images/case-hj.jpg">
 <meta property="og:site_name" content="원 OPC">
@@ -24,7 +24,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="원 OPC — 퍼시스 공식 대리점">
-<meta name="twitter:description" content="수도권 사무가구 납품·임원실·오피스 공간 컨설팅 전문. 퍼시스 공식 대리점.">
+<meta name="twitter:description" content="수도권 사무가구 납품과 사무가구 구독(렌탈) 전문. 퍼시스 공식 대리점.">
 <meta name="twitter:image" content="https://www.fursys-wonopc.com/images/case-hj.jpg">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E014RFR8QY"></script>
@@ -862,7 +862,7 @@ footer{
 }
 .nav-hamburger span{
   display:block;width:22px;height:1.5px;
-  background:rgba(255,255,255,.7);
+  background:#1A1A1A;
   transition:all .25s;
 }
 .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
@@ -951,10 +951,6 @@ footer{
   .hero-check{font-size:11px}
 }
 
-@media(max-width:480px){
-  .nav-dealer-name{display:none}
-  .nav-dealer-divider{display:none}
-}
 
 /* ── 네비 로고 + 대리점명 ── */
 .nav-logo{
@@ -1708,6 +1704,20 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
 /* ── 브랜드 컬러: 어두운 배경 위 강조색 ── */
 .svc-card:hover .svc-num{color:#E31837}
 .case-thumb img{color:transparent;font-size:0;line-height:0}
+
+/* ── 검색엔진용 H1 / 구독 FAQ ── */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.sub-faq{margin-top:90px}
+.sub-faq-h{font-size:clamp(30px,4vw,52px);font-weight:900;letter-spacing:-.04em;margin-bottom:30px}
+.sub-faq details{border-top:1px solid rgba(255,255,255,.18)}
+.sub-faq details:last-of-type{border-bottom:1px solid rgba(255,255,255,.18)}
+.sub-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:clamp(18px,1.7vw,22px);font-weight:700;letter-spacing:-.02em;transition:color .2s}
+.sub-faq summary::-webkit-details-marker{display:none}
+.sub-faq summary::after{content:'+';font-size:32px;font-weight:300;color:var(--gold);transition:transform .25s;flex-shrink:0}
+.sub-faq details[open] summary::after{transform:rotate(45deg)}
+.sub-faq summary:hover{color:var(--gold)}
+.sub-faq .ans{padding:0 0 30px;font-size:18px;line-height:1.8;color:#bdbdbd;max-width:900px}
+@media(max-width:900px){.sub-faq{margin-top:60px}.sub-faq summary{padding:20px 0}.sub-faq .ans{font-size:16px}}
 </style>
 <script type="application/ld+json">
 {
@@ -1715,7 +1725,7 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
   "@type": "FurnitureStore",
   "name": "원 OPC",
   "alternateName": "퍼시스 공식 대리점 원 OPC",
-  "description": "원 OPC는 퍼시스(FURSYS) 공식 대리점으로, 서울·경기·인천 수도권 전역의 중소기업·중견기업·대기업을 대상으로 사무가구 납품과 공간 컨설팅을 제공합니다. 임원실·중역공간·회의실·사무공간 구축, 레이아웃 제안, 납품·설치·AS까지 원스톱으로 진행합니다.",
+  "description": "원 OPC는 퍼시스(FURSYS) 공식 대리점으로, 서울·경기·인천 수도권 전역의 중소기업·중견기업·대기업을 대상으로 사무가구 납품과 공간 컨설팅을 제공합니다. 임원실·중역공간·회의실·사무공간 구축, 레이아웃 제안, 납품·설치·AS까지 원스톱으로 진행합니다. 월 단위 사무가구 구독(렌탈)도 상담·계약할 수 있습니다.",
   "url": "https://www.fursys-wonopc.com",
   "telephone": "+82-2-6072-0531",
   "image": "https://www.fursys-wonopc.com/images/case-hj.jpg",
@@ -1728,16 +1738,179 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
     "addressCountry": "KR"
   },
   "areaServed": [
-    { "@type": "City", "name": "서울" },
-    { "@type": "State", "name": "경기도" },
-    { "@type": "City", "name": "인천" }
+    {
+      "@type": "City",
+      "name": "서울"
+    },
+    {
+      "@type": "State",
+      "name": "경기도"
+    },
+    {
+      "@type": "City",
+      "name": "인천"
+    }
   ],
-  "brand": { "@type": "Brand", "name": "퍼시스 FURSYS" },
+  "brand": {
+    "@type": "Brand",
+    "name": "퍼시스 FURSYS"
+  },
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "사무환경 컨설팅" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "공간 레이아웃 제안" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "사무가구 납품 및 설치" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "임원실·중역공간 구축" } }
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "사무환경 컨설팅"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "공간 레이아웃 제안"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "사무가구 납품 및 설치"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "임원실·중역공간 구축"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "사무가구 렌탈(구독)"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "오피스 케어(정기 점검·A/S)"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "레이아웃 변경 컨설팅"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "가구 회수·재생"
+      }
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://blog.naver.com/wonopc_official",
+    "http://pf.kakao.com/_xmxfvEX"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "구독은 구매와 무엇이 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "구매는 가구를 소유하는 방식이라 초기 비용과 관리 부담을 기업이 모두 안아야 합니다. 구독은 초기 비용 부담 없이 월 단위로 이용하고, 유지관리와 계약 종료 후 처리까지 퍼시스가 함께 책임집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "구독 기간과 대상 제품은 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "36개월, 48개월, 60개월 중에서 선택할 수 있습니다. 표준 워크스테이션부터 주문 제작품까지 폭넓게 구독으로 도입할 수 있으며, 일부 품목에는 인수담보부 조건이 적용됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "오피스 케어에는 무엇이 포함되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "연 2~4회 정기 점검, 계약 기간에 따른 의자 클리닝, 사용자 귀책사유를 제외한 무상 A/S, 레이아웃 변경 컨설팅이 기본으로 제공됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "조직이나 인원이 바뀌면 가구를 변경할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "조직과 인원 변화에 맞춰 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다. 세부 범위는 상담 시 안내해 드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계약이 끝나면 가구는 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "반납형과 인수형 중에서 선택할 수 있습니다. 반납을 선택하면 퍼시스가 직접 회수해 재생(Revive) 공정을 거쳐 다시 순환시킵니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "기존에 쓰던 가구도 회수할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "상담 시 함께 안내해 드립니다. 이전이나 리뉴얼 과정에서 나오는 기존 가구의 처분까지 연계해서 처리할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "월 이용료는 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "월 이용료는 공간 규모, 구성 제품, 계약 기간에 따라 달라집니다. 상담을 신청하시면 맞춤 견적으로 안내해 드립니다. (전화 02-6072-0531)"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "원 OPC에서 구독 신청이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 원 OPC는 퍼시스 공식 대리점으로 구독 상담부터 계약, 설치 일정 조율까지 진행합니다. 상담 문의는 02-6072-0531로 연락하시거나 아래 상담 신청을 이용해 주세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "상담 신청 후 어떤 절차로 진행되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "문의를 접수하면 공간과 조직 현황을 파악하는 진단을 거쳐 구독 구성안을 제안드립니다. 협의된 조건으로 계약하고 설치 일정을 확정합니다."
+      }
+    }
   ]
 }
 </script>
@@ -1796,6 +1969,7 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
 
 <!-- ── HERO ── -->
 <section class="hero hero2">
+  <h1 class="sr-only">퍼시스 공식 대리점 원 OPC — 사무가구 구매와 구독</h1>
   <div class="hero-split">
 
     <!-- 축 1: 구독 -->
@@ -2005,6 +2179,19 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
       <div class="sub-row reveal"><div class="sub-num">02</div><div class="sub-ttl">오피스 케어</div><p class="sub-desc">연 2~4회 정기 점검과 의자 클리닝, 사용자 과실을 제외한 무상 A/S를 제공합니다.</p></div>
       <div class="sub-row reveal"><div class="sub-num">03</div><div class="sub-ttl">레이아웃 변경</div><p class="sub-desc">조직과 인원이 바뀌면 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다.</p></div>
       <div class="sub-row reveal"><div class="sub-num">04</div><div class="sub-ttl">회수 · 재생(중고가구)</div><p class="sub-desc">계약이 끝나면 반납형 또는 인수형을 선택합니다. 반납한 가구는 퍼시스가 회수해 재생 후 다시 순환시킵니다.</p></div>
+    </div>
+
+    <div class="sub-faq reveal">
+      <h3 class="sub-faq-h">자주 묻는 질문</h3>
+      <details><summary>구독은 구매와 무엇이 다른가요?</summary><div class="ans">구매는 가구를 소유하는 방식이라 초기 비용과 관리 부담을 기업이 모두 안아야 합니다. 구독은 초기 비용 부담 없이 월 단위로 이용하고, 유지관리와 계약 종료 후 처리까지 퍼시스가 함께 책임집니다.</div></details>
+      <details><summary>구독 기간과 대상 제품은 어떻게 되나요?</summary><div class="ans">36개월, 48개월, 60개월 중에서 선택할 수 있습니다. 표준 워크스테이션부터 주문 제작품까지 폭넓게 구독으로 도입할 수 있으며, 일부 품목에는 인수담보부 조건이 적용됩니다.</div></details>
+      <details><summary>오피스 케어에는 무엇이 포함되나요?</summary><div class="ans">연 2~4회 정기 점검, 계약 기간에 따른 의자 클리닝, 사용자 귀책사유를 제외한 무상 A/S, 레이아웃 변경 컨설팅이 기본으로 제공됩니다.</div></details>
+      <details><summary>조직이나 인원이 바뀌면 가구를 변경할 수 있나요?</summary><div class="ans">조직과 인원 변화에 맞춰 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다. 세부 범위는 상담 시 안내해 드립니다.</div></details>
+      <details><summary>계약이 끝나면 가구는 어떻게 되나요?</summary><div class="ans">반납형과 인수형 중에서 선택할 수 있습니다. 반납을 선택하면 퍼시스가 직접 회수해 재생(Revive) 공정을 거쳐 다시 순환시킵니다.</div></details>
+      <details><summary>기존에 쓰던 가구도 회수할 수 있나요?</summary><div class="ans">상담 시 함께 안내해 드립니다. 이전이나 리뉴얼 과정에서 나오는 기존 가구의 처분까지 연계해서 처리할 수 있습니다.</div></details>
+      <details><summary>월 이용료는 얼마인가요?</summary><div class="ans">월 이용료는 공간 규모, 구성 제품, 계약 기간에 따라 달라집니다. 상담을 신청하시면 맞춤 견적으로 안내해 드립니다. (전화 02-6072-0531)</div></details>
+      <details><summary>원 OPC에서 구독 신청이 가능한가요?</summary><div class="ans">네, 원 OPC는 퍼시스 공식 대리점으로 구독 상담부터 계약, 설치 일정 조율까지 진행합니다. 상담 문의는 02-6072-0531로 연락하시거나 아래 상담 신청을 이용해 주세요.</div></details>
+      <details><summary>상담 신청 후 어떤 절차로 진행되나요?</summary><div class="ans">문의를 접수하면 공간과 조직 현황을 파악하는 진단을 거쳐 구독 구성안을 제안드립니다. 협의된 조건으로 계약하고 설치 일정을 확정합니다.</div></details>
     </div>
 
     <div class="sub-ctas reveal">
