@@ -1740,7 +1740,7 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
 .hp-title{font-size:clamp(99px,15.3vw,225px)}
 .sub-h2{font-size:clamp(41px,6.66vw,97px)}
 .cat-cta-full{margin-top:16px}
-.process-steps .proc-step:last-child{grid-column:1/-1}
+@media(max-width:900px){.process-steps .proc-step:last-child{grid-column:1/-1}}
 #about .sec-desc,#products .sec-desc,#consult .consult-desc,#services .services-subtitle,#products .services-subtitle,#cases .services-subtitle,#process .services-subtitle,#consult .services-subtitle{color:#5A5A5E}
 #about .sec-desc,#products .sec-desc{font-weight:400}
 #about .about-card:not(:hover) .about-card-desc,#services .svc-card:not(:hover) .svc-desc,#process .proc-step:not(:hover) .proc-step-desc,#products .cat-card:not(:hover) .cat-products,#cases .case-desc{color:#5A5A5E}
@@ -1751,7 +1751,6 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
   #about .sec-h2{font-size:52px}
   #services .services-title,#products .services-title,#cases .services-title,#process .services-title,#consult .services-title{font-size:52px!important}
   #services .services-subtitle,#products .services-subtitle,#cases .services-subtitle,#process .services-subtitle,#consult .services-subtitle{font-size:20px!important}
-  .cat-showcase .cat-card:last-child{grid-column:span 2}
 }
 @media(max-width:900px){
   .hp-title{font-size:clamp(86px,28.8vw,144px)}
@@ -1773,6 +1772,80 @@ footer .fl-link:hover{color:#fff}
   footer .footer-inner{grid-template-columns:1fr!important;gap:32px}
   footer .footer-bottom{flex-direction:column;gap:6px}
   footer .footer-bottom span{font-size:13px}
+}
+
+/* ── 3단계: 구조 개편 (상담 막대 · 비교표 · 구독 4열 · FAQ 접기 · 서비스 행 · 진행 5열 · 쉬는 구간) ── */
+.hero-bar{background:#1A1A1A;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px max(60px,calc((100vw - 1200px)/2 + 60px))}
+.hero-bar p{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em}
+.hero-bar-btns{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.hb-primary{background:#E31837;color:#fff;font-weight:700;font-size:17px;padding:13px 26px;text-decoration:none;white-space:nowrap}
+.hb-primary:hover{background:#c8102e}
+.hb-tel{color:#fff;font-weight:700;font-size:19px;text-decoration:none;white-space:nowrap}
+.hs-strip{grid-template-columns:repeat(4,1fr)}
+.hs-num{font-size:clamp(30px,3.3vw,46px)}
+.hs-item+.hs-item{padding-left:24px}
+#about .about-left{align-self:center}
+#compare{background:#F5F5F7}
+.cmp-inner{max-width:1200px;margin:0 auto;padding:100px 60px}
+.cmp-table{width:100%;border-collapse:collapse;background:#fff;table-layout:fixed}
+.cmp-table th,.cmp-table td{padding:22px 28px;text-align:left;border-bottom:1px solid #E5E5EA;font-size:18px;line-height:1.5}
+.cmp-table tbody th{font-weight:700;color:#1A1A1A;width:24%}
+.cmp-table td{color:#3A3A3E}
+.cmp-table thead th{font-size:20px;font-weight:900;padding:20px 28px;color:#fff}
+.cmp-table thead .cmp-sub{background:#E31837}
+.cmp-table thead .cmp-buy{background:#1A1A1A}
+.cmp-cta{display:flex;gap:16px;justify-content:center;margin-top:32px}
+.cmp-btn{font-size:17px;font-weight:700;padding:15px 30px;text-decoration:none;border:1.5px solid #1A1A1A;color:#1A1A1A;background:#fff}
+.cmp-btn-sub{background:#E31837;border-color:#E31837;color:#fff}
+.cmp-btn:hover{opacity:.88}
+.faq-more{display:none}
+.faq-more.open{display:block}
+.faq-more details:first-of-type{border-top:0}
+.faq-more-btn{margin-top:22px;background:none;border:1.5px solid rgba(255,255,255,.45);color:#fff;font:inherit;font-size:17px;font-weight:700;padding:13px 26px;cursor:pointer}
+.faq-more-btn:hover{border-color:var(--gold);color:var(--gold)}
+.faq-more-btn span{margin-left:6px;color:var(--gold)}
+.sub-faq{margin-top:70px}
+.sub-faq-h{font-size:clamp(26px,3vw,38px)}
+.svc-row{margin-top:56px;padding-top:36px;border-top:1px solid #E5E5EA}
+.svc-row-h{font-size:22px;font-weight:700;margin:0 0 20px;letter-spacing:-.02em}
+.svc-row ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc-row li{display:flex;flex-direction:column;gap:6px;padding:18px 20px;background:#F5F5F7}
+.svc-row li strong{font-size:17px;font-weight:700}
+.svc-row li span{font-size:15px;color:#5A5A5E;line-height:1.5}
+.breather{background:#F5F5F7;padding:110px 24px;text-align:center}
+.breather p{margin:0;font-size:clamp(24px,3vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1.45;color:#1A1A1A}
+.breather em{font-style:normal;color:#E31837}
+@media(min-width:901px){
+  .sub-h2{font-size:clamp(36px,4.6vw,64px)}
+  .sub-list{display:grid;grid-template-columns:repeat(4,1fr);gap:0 32px;border-bottom:0}
+  .sub-row{grid-template-columns:1fr;gap:14px;align-content:start;padding:32px 0 8px}
+  .sub-row:hover{padding-left:0;padding-right:0;background:none}
+  .sub-row:hover .sub-num{-webkit-text-stroke-color:#E31837}
+  .sub-row:hover .sub-desc{color:#bdbdbd}
+  .sub-num{font-size:48px}
+  .sub-ttl{min-height:2.5em}
+  #compare .services-title{font-size:52px!important}
+  #compare .services-subtitle{font-size:20px!important;color:#5A5A5E}
+  .sub-ttl{font-size:clamp(22px,2vw,28px)}
+  .sub-desc{font-size:16px;line-height:1.7}
+  .process-steps{grid-template-columns:repeat(5,1fr)!important;gap:12px}
+  .process-steps .proc-step{padding:28px 20px 26px;min-height:0}
+  .process-steps .proc-step-title{font-size:19px}
+}
+@media(max-width:900px){
+  .hero-bar{flex-direction:column;align-items:flex-start;padding:22px 24px;gap:14px}
+  .hero-bar p{font-size:18px}
+  .hs-strip{grid-template-columns:repeat(2,1fr)!important;row-gap:14px}
+  .hs-item+.hs-item{padding-left:0;border-left:0}
+  .hs-item:nth-child(even){border-left:1px solid rgba(0,0,0,.18);padding-left:14px}
+  .cmp-inner{padding:60px 24px}
+  .cmp-table th,.cmp-table td{padding:14px 12px;font-size:15px}
+  .cmp-table thead th{font-size:16px;padding:14px 12px}
+  .cmp-table tbody th{width:28%}
+  .cmp-cta{flex-direction:column}
+  .cmp-btn{text-align:center}
+  .svc-row ul{grid-template-columns:1fr 1fr}
+  .breather{padding:72px 24px}
 }
 </style>
 <script type="application/ld+json">
@@ -2071,10 +2144,19 @@ footer .fl-link:hover{color:#fff}
 
   </div>
 
+  <div class="hero-bar">
+    <p>공간 규모만 알려주세요. 레이아웃과 견적으로 답해 드립니다.</p>
+    <div class="hero-bar-btns">
+      <a href="#consult" class="hb-primary" data-ev="cta_consult" data-loc="hero">상담 신청 <b>→</b></a>
+      <a href="tel:0260720531" class="hb-tel">02-6072-0531</a>
+    </div>
+  </div>
+
   <div class="hs-strip">
     <div class="hs-item"><span class="hs-num">1위</span><span class="hs-lbl">국내 사무가구<br>시장점유율</span></div>
     <div class="hs-item"><span class="hs-num">50%+</span><span class="hs-lbl">국내 1000대<br>기업 사용률</span></div>
     <div class="hs-item"><span class="hs-num">40년</span><span class="hs-lbl">퍼시스<br>브랜드 역사</span></div>
+    <div class="hs-item"><span class="hs-num">24시간</span><span class="hs-lbl">내 견적서<br>회신</span></div>
   </div>
 </section>
 
@@ -2090,28 +2172,6 @@ footer .fl-link:hover{color:#fff}
         단순 가구 납품을 넘어 공간 분석, 레이아웃 제안, 납품 후 관리까지
         오피스 솔루션 전 과정을 책임집니다.
       </p>
-      <div class="about-grid reveal">
-        <div class="about-card">
-          <div class="about-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-          <div class="about-card-title">공간 레이아웃 제안</div>
-          <div class="about-card-desc">평면도 기반 맞춤 배치 제안서 무료 제공</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div class="about-card-title">빠른 견적 대응</div>
-          <div class="about-card-desc">문의 후 24시간 내 상세 견적서 발송</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div>
-          <div class="about-card-title">본사 직영 설치·AS</div>
-          <div class="about-card-desc">퍼시스 자회사 직영팀이 설치부터 AS까지</div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="about-card-title">지역 밀착 서비스</div>
-          <div class="about-card-desc">즉시 현장 방문 가능</div>
-        </div>
-      </div>
     </div>
     <div class="about-right reveal">
 
@@ -2163,186 +2223,27 @@ footer .fl-link:hover{color:#fff}
 </section>
 
 
-<!-- ── SERVICES ── -->
-<section id="services">
-  <div class="services-inner">
-    <div class="reveal" style="text-align:center;margin-bottom:52px">
-      <h2 class="services-title" style="font-size:36px;font-weight:700">오피스 가구와 서비스</h2>
-      <p class="services-subtitle">업무 환경에 맞는 다양한 가구 솔루션과 실행 서비스를 제공합니다.</p>
+<!-- ── COMPARE (구독 vs 구매) ── -->
+<section id="compare">
+  <div class="cmp-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:44px">
+      <h2 class="services-title" style="font-size:36px;font-weight:700">구독과 구매, 무엇이 다를까요?</h2>
+      <p class="services-subtitle">우리 회사에 맞는 방식을 비교해 보세요.</p>
     </div>
-    <div class="services-grid reveal">
-
-      <div class="svc-card">
-        <div class="svc-img-wrap">
-          <div class="svc-img svc-img-1"></div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">01</div>
-          <div class="svc-title">사무환경 컨설팅</div>
-          <p class="svc-desc">업무 방식과 조직 문화에 맞는 가구 구성과 공간 운영 방향을 함께 설계합니다.</p>
-        </div>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-img-wrap">
-          <div class="svc-img svc-img-2"></div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">02</div>
-          <div class="svc-title">기업이사·클리닝</div>
-          <p class="svc-desc">이사, 재배치, 클리닝까지 업무 공백을 최소화하는 이전 솔루션을 제공합니다.</p>
-        </div>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-img-wrap">
-          <div class="svc-img svc-img-3"></div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">03</div>
-          <div class="svc-title">오피스 인테리어</div>
-          <p class="svc-desc">브랜드와 협업 방식에 맞춘 사무공간 디자인과 시공을 체계적으로 진행합니다.</p>
-        </div>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-img-wrap">
-          <div class="svc-img svc-img-4"></div>
-        </div>
-        <div class="svc-body">
-          <div class="svc-num">04</div>
-          <div class="svc-title">납품 및 설치</div>
-          <p class="svc-desc">퍼시스 본사 직영팀이 정확한 배치 도면에 따라 전문적으로 납품·설치합니다.</p>
-        </div>
-      </div>
-
+    <table class="cmp-table reveal">
+      <thead><tr><th scope="col"></th><th scope="col" class="cmp-sub">구독</th><th scope="col" class="cmp-buy">구매</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">초기 비용</th><td>월 단위로 나누어 부담</td><td>한 번에 지불</td></tr>
+        <tr><th scope="row">이용 기간</th><td>36·48·60개월 중 선택</td><td>기간 제한 없이 소유</td></tr>
+        <tr><th scope="row">관리·A/S</th><td>정기 점검, 무상 A/S 포함</td><td>본사 직영팀 A/S</td></tr>
+        <tr><th scope="row">조직·인원 변경</th><td>레이아웃 변경 컨설팅</td><td>재배치·추가 구매 별도 상담</td></tr>
+        <tr><th scope="row">계약 종료 후</th><td>반납형 또는 인수형 선택</td><td>자산으로 계속 사용</td></tr>
+      </tbody>
+    </table>
+    <div class="cmp-cta reveal">
+      <a href="#subscription" class="cmp-btn cmp-btn-sub" data-ev="cta_compare_sub">구독 자세히 보기 <b>→</b></a>
+      <a href="#products" class="cmp-btn cmp-btn-buy" data-ev="cta_compare_buy">구매 제품 보기 <b>→</b></a>
     </div>
-  </div>
-</section>
-
-<!-- ── SUBSCRIPTION (오피스 구독) ── -->
-<section id="subscription">
-  <div class="sub-inner">
-    <div class="reveal">
-      <div class="sub-tag">OFFICE SUBSCRIPTION</div>
-      <h2 class="sub-h2">가구는 쓰는 만큼,<br><em>구독</em>으로.</h2>
-      <p class="sub-sub">초기 부담은 낮추고, 관리·변경·회수까지 퍼시스와 함께합니다.</p>
-    </div>
-
-    <div class="sub-list">
-      <div class="sub-row reveal"><div class="sub-num">01</div><div class="sub-ttl">사무가구 렌탈</div><p class="sub-desc">공간과 예산에 맞춰 필요한 가구를 월 단위로 이용합니다. 계약 기간은 36·48·60개월 중 선택합니다.</p></div>
-      <div class="sub-row reveal"><div class="sub-num">02</div><div class="sub-ttl">오피스 케어</div><p class="sub-desc">연 2~4회 정기 점검과 의자 클리닝, 사용자 과실을 제외한 무상 A/S를 제공합니다.</p></div>
-      <div class="sub-row reveal"><div class="sub-num">03</div><div class="sub-ttl">레이아웃 변경</div><p class="sub-desc">조직과 인원이 바뀌면 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다.</p></div>
-      <div class="sub-row reveal"><div class="sub-num">04</div><div class="sub-ttl">회수 · 재생(중고가구)</div><p class="sub-desc">계약이 끝나면 반납형 또는 인수형을 선택합니다. 반납한 가구는 퍼시스가 회수해 재생 후 다시 순환시킵니다.</p></div>
-    </div>
-
-    <div class="sub-faq reveal">
-      <h3 class="sub-faq-h">자주 묻는 질문</h3>
-      <details><summary>구독은 구매와 무엇이 다른가요?</summary><div class="ans">구매는 가구를 소유하는 방식이라 초기 비용과 관리 부담을 기업이 모두 안아야 합니다. 구독은 초기 비용 부담 없이 월 단위로 이용하고, 유지관리와 계약 종료 후 처리까지 퍼시스가 함께 책임집니다.</div></details>
-      <details><summary>구독 기간과 대상 제품은 어떻게 되나요?</summary><div class="ans">36개월, 48개월, 60개월 중에서 선택할 수 있습니다. 표준 워크스테이션부터 주문 제작품까지 폭넓게 구독으로 도입할 수 있으며, 일부 품목에는 인수담보부 조건이 적용됩니다.</div></details>
-      <details><summary>오피스 케어에는 무엇이 포함되나요?</summary><div class="ans">연 2~4회 정기 점검, 계약 기간에 따른 의자 클리닝, 사용자 귀책사유를 제외한 무상 A/S, 레이아웃 변경 컨설팅이 기본으로 제공됩니다.</div></details>
-      <details><summary>조직이나 인원이 바뀌면 가구를 변경할 수 있나요?</summary><div class="ans">조직과 인원 변화에 맞춰 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다. 세부 범위는 상담 시 안내해 드립니다.</div></details>
-      <details><summary>계약이 끝나면 가구는 어떻게 되나요?</summary><div class="ans">반납형과 인수형 중에서 선택할 수 있습니다. 반납을 선택하면 퍼시스가 직접 회수해 재생(Revive) 공정을 거쳐 다시 순환시킵니다.</div></details>
-      <details><summary>기존에 쓰던 가구도 회수할 수 있나요?</summary><div class="ans">상담 시 함께 안내해 드립니다. 이전이나 리뉴얼 과정에서 나오는 기존 가구의 처분까지 연계해서 처리할 수 있습니다.</div></details>
-      <details><summary>월 이용료는 얼마인가요?</summary><div class="ans">월 이용료는 공간 규모, 구성 제품, 계약 기간에 따라 달라집니다. 상담을 신청하시면 맞춤 견적으로 안내해 드립니다. (전화 02-6072-0531)</div></details>
-      <details><summary>원 OPC에서 구독 신청이 가능한가요?</summary><div class="ans">네, 원 OPC는 퍼시스 공식 대리점으로 구독 상담부터 계약, 설치 일정 조율까지 진행합니다. 상담 문의는 02-6072-0531로 연락하시거나 아래 상담 신청을 이용해 주세요.</div></details>
-      <details><summary>상담 신청 후 어떤 절차로 진행되나요?</summary><div class="ans">문의를 접수하면 공간과 조직 현황을 파악하는 진단을 거쳐 구독 구성안을 제안드립니다. 협의된 조건으로 계약하고 설치 일정을 확정합니다.</div></details>
-    </div>
-
-    <div class="sub-ctas reveal">
-      <a href="#consult" class="sub-btn red">구독 상담 신청 <span>→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ── PRODUCTS ── -->
-<section id="products">
-  <div class="products-inner">
-
-    <div class="reveal" style="text-align:center;margin-bottom:52px">
-      <h2 class="services-title" style="font-size:36px;font-weight:700">퍼시스 주요 제품 라인업</h2>
-      <p class="services-subtitle">카테고리를 클릭하면 퍼시스 공식 카탈로그에서 전체 제품을 확인하실 수 있습니다.</p>
-    </div>
-
-    <!-- 카테고리 쇼케이스 그리드 -->
-    <div class="cat-showcase reveal">
-
-      <a href="https://planning.fursys.com/category/389" target="_blank" class="cat-card" data-num="01">
-        <div class="cat-label">Workspaces · Desk Systems</div>
-        <div class="cat-name">업무용 책상</div>
-        <div class="cat-products">인에이블 · 플로우파인더 · 엑스페이스 · 슈퍼테크</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/679" target="_blank" class="cat-card" data-num="02">
-        <div class="cat-label">Workspaces · Panel Systems</div>
-        <div class="cat-name">파티션 시스템</div>
-        <div class="cat-products">인라이트 · FX-I · 스퀘어 패널</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/668" target="_blank" class="cat-card" data-num="03">
-        <div class="cat-label">Tables · Conference</div>
-        <div class="cat-name">회의 테이블</div>
-        <div class="cat-products">비콘 · 베스타 · 크레파스 · 트레이닝 테이블</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/400" target="_blank" class="cat-card" data-num="04">
-        <div class="cat-label">Seating · Task Chairs</div>
-        <div class="cat-name">업무용 의자</div>
-        <div class="cat-products">어라운드 · 아이티스2 · 버튼 · EGA</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/403" target="_blank" class="cat-card" data-num="05">
-        <div class="cat-label">Seating · Multi Use</div>
-        <div class="cat-name">다목적 의자</div>
-        <div class="cat-products">소다 · VIM · 스태킹 · 벤치</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/405" target="_blank" class="cat-card" data-num="06">
-        <div class="cat-label">Sofas &amp; Armchairs</div>
-        <div class="cat-name">소파 · 라운지</div>
-        <div class="cat-products">코티 · 에어리 · 라운지 테이블</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/410" target="_blank" class="cat-card" data-num="07">
-        <div class="cat-label">Space in Space</div>
-        <div class="cat-name">시스템 부스</div>
-        <div class="cat-products">집중 업무 부스 · 1–4인 독립 공간</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-      <a href="https://planning.fursys.com/category/663" target="_blank" class="cat-card" data-num="08">
-        <div class="cat-label">Common Items · Storage</div>
-        <div class="cat-name">수납 · 라커</div>
-        <div class="cat-products">캐비닛 · 오픈장 · 스마트 라커</div>
-        
-        <div class="cat-accent"></div>
-      </a>
-
-    </div>
-
-    <!-- 전체 제품 보기 버튼 -->
-    <a href="https://planning.fursys.com/" target="_blank" class="cat-cta-full">
-      <div class="cat-cta-left">
-        <span class="cat-cta-label">FURSYS OFFICIAL CATALOG</span>
-        <span class="cat-cta-title">전체 제품 보기</span>
-        <span class="cat-cta-sub">planning.fursys.com에서 퍼시스 전 라인업을 확인하세요</span>
-      </div>
-      
-    </a>
-
   </div>
 </section>
 
@@ -2414,6 +2315,130 @@ footer .fl-link:hover{color:#fff}
   </div>
 </section>
 
+<!-- ── SUBSCRIPTION (오피스 구독) ── -->
+<section id="subscription">
+  <div class="sub-inner">
+    <div class="reveal">
+      <div class="sub-tag">OFFICE SUBSCRIPTION</div>
+      <h2 class="sub-h2">가구는 쓰는 만큼,<br><em>구독</em>으로.</h2>
+      <p class="sub-sub">초기 부담은 낮추고, 관리·변경·회수까지 퍼시스와 함께합니다.</p>
+    </div>
+
+    <div class="sub-list">
+      <div class="sub-row reveal"><div class="sub-num">01</div><div class="sub-ttl">사무가구 렌탈</div><p class="sub-desc">공간과 예산에 맞춰 필요한 가구를 월 단위로 이용합니다. 계약 기간은 36·48·60개월 중 선택합니다.</p></div>
+      <div class="sub-row reveal"><div class="sub-num">02</div><div class="sub-ttl">오피스 케어</div><p class="sub-desc">연 2~4회 정기 점검과 의자 클리닝, 사용자 과실을 제외한 무상 A/S를 제공합니다.</p></div>
+      <div class="sub-row reveal"><div class="sub-num">03</div><div class="sub-ttl">레이아웃 변경</div><p class="sub-desc">조직과 인원이 바뀌면 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다.</p></div>
+      <div class="sub-row reveal"><div class="sub-num">04</div><div class="sub-ttl">회수 · 재생(중고가구)</div><p class="sub-desc">계약이 끝나면 반납형 또는 인수형을 선택합니다. 반납한 가구는 퍼시스가 회수해 재생 후 다시 순환시킵니다.</p></div>
+    </div>
+
+    <div class="sub-faq reveal">
+      <h3 class="sub-faq-h">자주 묻는 질문</h3>
+      <details open><summary>구독은 구매와 무엇이 다른가요?</summary><div class="ans">구매는 가구를 소유하는 방식이라 초기 비용과 관리 부담을 기업이 모두 안아야 합니다. 구독은 초기 비용 부담 없이 월 단위로 이용하고, 유지관리와 계약 종료 후 처리까지 퍼시스가 함께 책임집니다.</div></details>
+      <details open><summary>구독 기간과 대상 제품은 어떻게 되나요?</summary><div class="ans">36개월, 48개월, 60개월 중에서 선택할 수 있습니다. 표준 워크스테이션부터 주문 제작품까지 폭넓게 구독으로 도입할 수 있으며, 일부 품목에는 인수담보부 조건이 적용됩니다.</div></details>
+      <details open><summary>오피스 케어에는 무엇이 포함되나요?</summary><div class="ans">연 2~4회 정기 점검, 계약 기간에 따른 의자 클리닝, 사용자 귀책사유를 제외한 무상 A/S, 레이아웃 변경 컨설팅이 기본으로 제공됩니다.</div></details>
+      <div class="faq-more" id="faq-more">
+      <details><summary>조직이나 인원이 바뀌면 가구를 변경할 수 있나요?</summary><div class="ans">조직과 인원 변화에 맞춰 배치 변경안을 검토하고, 이전·증설 계획까지 지원합니다. 세부 범위는 상담 시 안내해 드립니다.</div></details>
+      <details><summary>계약이 끝나면 가구는 어떻게 되나요?</summary><div class="ans">반납형과 인수형 중에서 선택할 수 있습니다. 반납을 선택하면 퍼시스가 직접 회수해 재생(Revive) 공정을 거쳐 다시 순환시킵니다.</div></details>
+      <details><summary>기존에 쓰던 가구도 회수할 수 있나요?</summary><div class="ans">상담 시 함께 안내해 드립니다. 이전이나 리뉴얼 과정에서 나오는 기존 가구의 처분까지 연계해서 처리할 수 있습니다.</div></details>
+      <details><summary>월 이용료는 얼마인가요?</summary><div class="ans">월 이용료는 공간 규모, 구성 제품, 계약 기간에 따라 달라집니다. 상담을 신청하시면 맞춤 견적으로 안내해 드립니다. (전화 02-6072-0531)</div></details>
+      <details><summary>원 OPC에서 구독 신청이 가능한가요?</summary><div class="ans">네, 원 OPC는 퍼시스 공식 대리점으로 구독 상담부터 계약, 설치 일정 조율까지 진행합니다. 상담 문의는 02-6072-0531로 연락하시거나 아래 상담 신청을 이용해 주세요.</div></details>
+      <details><summary>상담 신청 후 어떤 절차로 진행되나요?</summary><div class="ans">문의를 접수하면 공간과 조직 현황을 파악하는 진단을 거쳐 구독 구성안을 제안드립니다. 협의된 조건으로 계약하고 설치 일정을 확정합니다.</div></details>
+      </div>
+      <button type="button" class="faq-more-btn" id="faq-more-btn" aria-expanded="false" aria-controls="faq-more" onclick="toggleFaq(this)">질문 6개 더 보기 <span>+</span></button>
+    </div>
+
+    <div class="sub-ctas reveal">
+      <a href="#consult" class="sub-btn red">구독 상담 신청 <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section id="products">
+  <div class="products-inner">
+
+    <div class="reveal" style="text-align:center;margin-bottom:52px">
+      <h2 class="services-title" style="font-size:36px;font-weight:700">퍼시스 주요 제품 라인업</h2>
+      <p class="services-subtitle">카테고리를 클릭하면 퍼시스 공식 카탈로그에서 전체 제품을 확인하실 수 있습니다.</p>
+    </div>
+
+    <!-- 카테고리 쇼케이스 그리드 -->
+    <div class="cat-showcase reveal">
+
+      <a href="https://planning.fursys.com/category/389" target="_blank" class="cat-card" data-num="01">
+        <div class="cat-label">Workspaces · Desk Systems</div>
+        <div class="cat-name">업무용 책상</div>
+        <div class="cat-products">인에이블 · 플로우파인더 · 엑스페이스 · 슈퍼테크</div>
+        
+        <div class="cat-accent"></div>
+      </a>
+
+      <a href="https://planning.fursys.com/category/679" target="_blank" class="cat-card" data-num="02">
+        <div class="cat-label">Workspaces · Panel Systems</div>
+        <div class="cat-name">파티션 시스템</div>
+        <div class="cat-products">인라이트 · FX-I · 스퀘어 패널</div>
+        
+        <div class="cat-accent"></div>
+      </a>
+
+      <a href="https://planning.fursys.com/category/668" target="_blank" class="cat-card" data-num="03">
+        <div class="cat-label">Tables · Conference</div>
+        <div class="cat-name">회의 테이블</div>
+        <div class="cat-products">비콘 · 베스타 · 크레파스 · 트레이닝 테이블</div>
+        
+        <div class="cat-accent"></div>
+      </a>
+
+      <a href="https://planning.fursys.com/category/400" target="_blank" class="cat-card" data-num="04">
+        <div class="cat-label">Seating · Task Chairs</div>
+        <div class="cat-name">업무용 의자</div>
+        <div class="cat-products">어라운드 · 아이티스2 · 버튼 · EGA</div>
+        
+        <div class="cat-accent"></div>
+      </a>
+
+      <a href="https://planning.fursys.com/category/405" target="_blank" class="cat-card" data-num="06">
+        <div class="cat-label">Sofas &amp; Armchairs</div>
+        <div class="cat-name">소파 · 라운지</div>
+        <div class="cat-products">코티 · 에어리 · 라운지 테이블</div>
+        
+        <div class="cat-accent"></div>
+      </a>
+
+      <a href="https://planning.fursys.com/category/663" target="_blank" class="cat-card" data-num="08">
+        <div class="cat-label">Common Items · Storage</div>
+        <div class="cat-name">수납 · 라커</div>
+        <div class="cat-products">캐비닛 · 오픈장 · 스마트 라커</div>
+        
+        <div class="cat-accent"></div>
+      </a>
+
+    </div>
+
+    <!-- 전체 제품 보기 버튼 -->
+    <a href="https://planning.fursys.com/" target="_blank" class="cat-cta-full">
+      <div class="cat-cta-left">
+        <span class="cat-cta-label">FURSYS OFFICIAL CATALOG</span>
+        <span class="cat-cta-title">전체 제품 보기</span>
+        <span class="cat-cta-sub">planning.fursys.com에서 퍼시스 전 라인업을 확인하세요</span>
+      </div>
+      
+    </a>
+
+    <!-- 함께 제공하는 서비스 -->
+    <div class="svc-row reveal" id="services">
+      <h3 class="svc-row-h">함께 제공하는 서비스</h3>
+      <ul>
+        <li><strong>사무환경 컨설팅</strong><span>업무 방식에 맞는 구성 설계</span></li>
+        <li><strong>기업이사·클리닝</strong><span>이전·재배치·클리닝</span></li>
+        <li><strong>오피스 인테리어</strong><span>디자인부터 시공까지</span></li>
+        <li><strong>납품 및 설치</strong><span>본사 직영팀이 설치</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <!-- ── PROCESS ── -->
 <section id="process">
   <div class="process-inner">
@@ -2467,6 +2492,9 @@ footer .fl-link:hover{color:#fff}
   </div>
 </section>
 
+<!-- ── 쉬는 구간 ── -->
+<section class="breather"><p>공간 규모와 필요 제품만 알려주세요.<br><em>레이아웃과 견적</em>으로 답해 드립니다.</p></section>
+
 <!-- ── CONSULT ── -->
 <section id="consult">
   <div class="consult-inner">
@@ -2475,10 +2503,6 @@ footer .fl-link:hover{color:#fff}
     <div class="consult-left reveal">
       <h2 class="services-title" style="font-size:36px;font-weight:700">상담 문의</h2>
       <div class="sec-line"></div>
-      <p class="consult-desc">
-        공간 규모와 필요 제품만 알려주시면<br>
-        빠르게 레이아웃 제안과 견적을 드립니다.
-      </p>
 
       <!-- 연락처 카드들 -->
       <div class="consult-info-cards">
@@ -2901,6 +2925,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
   });
 });
+</script>
+<script>
+function toggleFaq(b){var m=document.getElementById('faq-more');var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.innerHTML=o?'질문 접기 <span>−</span>':'질문 6개 더 보기 <span>+</span>';}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-ev]');if(a&&window.gtag){gtag('event',a.getAttribute('data-ev'),{click_location:a.getAttribute('data-loc')||''});}});
 </script>
 </body>
 </html>
