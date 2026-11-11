@@ -1718,6 +1718,23 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
 .sub-faq summary:hover{color:var(--gold)}
 .sub-faq .ans{padding:0 0 30px;font-size:18px;line-height:1.8;color:#bdbdbd;max-width:900px}
 @media(max-width:900px){.sub-faq{margin-top:60px}.sub-faq summary{padding:20px 0}.sub-faq .ans{font-size:16px}}
+
+/* 개인정보 동의 */
+#consult .privacy-box{margin:4px 0 18px;padding:14px 16px;background:#F5F5F7;border-radius:10px}
+#consult .privacy-check{display:flex;align-items:flex-start;gap:10px;font-size:15px;font-weight:600;color:#1A1A1A;cursor:pointer;margin:0}
+#consult .privacy-check input{width:20px;height:20px;margin:1px 0 0;flex:0 0 20px;accent-color:#E31837;cursor:pointer}
+#consult .privacy-detail{margin-top:8px}
+#consult .privacy-detail summary{font-size:14px;color:#6E6E73;cursor:pointer;padding-left:30px}
+.privacy-text{font-size:13.5px;line-height:1.7;color:#424245}
+#consult .privacy-text{margin-top:10px;max-height:220px;overflow:auto;padding:12px 14px;background:#fff;border:1px solid #E5E5EA;border-radius:8px}
+.privacy-text p{margin:10px 0 4px}
+.privacy-text p:first-child{margin-top:0}
+.privacy-text ul{margin:0;padding-left:18px}
+.privacy-dialog{border:0;border-radius:14px;padding:0;width:min(560px,calc(100vw - 32px));max-height:80vh;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.privacy-dialog::backdrop{background:rgba(0,0,0,.55)}
+.privacy-dialog .pd-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #E5E5EA;font-size:17px;color:#1A1A1A}
+.privacy-dialog .pd-close{background:none;border:0;font-size:28px;line-height:1;cursor:pointer;color:#6E6E73;padding:0 4px}
+.privacy-dialog .pd-body{padding:16px 20px 20px;max-height:calc(80vh - 60px);overflow:auto}
 </style>
 <script type="application/ld+json">
 {
@@ -1821,11 +1838,10 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
         "Tuesday",
         "Wednesday",
         "Thursday",
-        "Friday",
-        "Saturday"
+        "Friday"
       ],
       "opens": "08:00",
-      "closes": "18:00"
+      "closes": "19:00"
     }
   ],
   "sameAs": [
@@ -2451,7 +2467,7 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
           </div>
           <div class="ci-body">
             <div class="ci-label">영업 시간</div>
-            <div class="ci-val">월–토 08:00–18:00</div>
+            <div class="ci-val">월–금 08:00–19:00</div>
           </div>
         </div>
         <div class="ci-card">
@@ -2529,6 +2545,37 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
             <label>요청사항</label>
             <textarea name="요청사항" placeholder="납기 일정, 특이사항, 원하는 제품 등 자유롭게 입력해주세요."></textarea>
           </div>
+          <div class="privacy-box">
+            <label class="privacy-check"><input type="checkbox" name="개인정보동의" value="동의" required/> <span>개인정보 수집 및 이용에 동의합니다. (필수)</span></label>
+            <details class="privacy-detail">
+              <summary>내용 보기</summary>
+              <div class="privacy-text">
+<p><b>▶ 개인정보의 수집 및 이용목적</b></p>
+<ul>
+<li>상담 신청 접수 및 답변, 견적·레이아웃 제안 등 상담 진행</li>
+<li>고지사항 전달, 불만처리 등 의사소통 경로 확보</li>
+<li>기타 원활한 양질의 서비스 제공</li>
+</ul>
+<p><b>▶ 수집하는 개인정보의 항목</b></p>
+<ul>
+<li>필수 : 회사명, 담당자명, 연락처</li>
+<li>선택 : 이메일, 인원수, 공간 규모, 관심 서비스, 요청사항</li>
+</ul>
+<p><b>▶ 개인정보의 보유 및 이용기간</b></p>
+<ul>
+<li>원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</li>
+<li>다만, 원활한 서비스의 상담을 위해 상담 완료 후 내용을 3개월간 보유할 수 있으며, 전자상거래에서의 소비자보호에 관한 법률 등 타 법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다.</li>
+</ul>
+<p><b>▶ 개인정보 처리의 위탁 및 국외 보관</b></p>
+<ul>
+<li>접수된 상담 내용은 Google LLC(미국)의 서비스(Google 스프레드시트)에 저장, 관리됩니다.</li>
+<li>보관 기간은 위 '보유 및 이용기간'과 같습니다.</li>
+</ul>
+<p><b>▶ 동의 거부 권리 및 불이익</b></p>
+<ul><li>개인정보 수집 및 이용에 대한 동의를 거부할 수 있으며, 거부 시 온라인 상담 신청이 제한됩니다. 전화(02-6072-0531)로 문의하실 수 있습니다.</li></ul>
+              </div>
+            </details>
+          </div>
           <input type="text" name="_gotcha" style="display:none"/>
           <button type="submit" class="form-submit">신청하기</button>
         </form>
@@ -2588,12 +2635,55 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
         <a href="#consult" class="fl-link">온라인 상담</a>
         <a href="tel:0260720531" class="fl-link">02-6072-0531</a>
         <a href="#process" class="fl-link">주문 프로세스</a>
+        <a href="#" class="fl-link" onclick="openPrivacy(event)">개인정보처리방침</a>
       </div>
     </div>
   </div>
 </footer>
 
+<dialog id="privacy-dialog" class="privacy-dialog">
+  <div class="pd-head"><strong>개인정보처리방침</strong><button type="button" class="pd-close" onclick="document.getElementById('privacy-dialog').close()" aria-label="닫기">×</button></div>
+  <div class="pd-body privacy-text">
+<p>원 OPC는 온라인 상담 신청 과정에서 아래와 같이 개인정보를 처리합니다.</p>
+<p><b>▶ 개인정보의 수집 및 이용목적</b></p>
+<ul>
+<li>상담 신청 접수 및 답변, 견적·레이아웃 제안 등 상담 진행</li>
+<li>고지사항 전달, 불만처리 등 의사소통 경로 확보</li>
+<li>기타 원활한 양질의 서비스 제공</li>
+</ul>
+<p><b>▶ 수집하는 개인정보의 항목</b></p>
+<ul>
+<li>필수 : 회사명, 담당자명, 연락처</li>
+<li>선택 : 이메일, 인원수, 공간 규모, 관심 서비스, 요청사항</li>
+</ul>
+<p><b>▶ 개인정보의 보유 및 이용기간</b></p>
+<ul>
+<li>원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</li>
+<li>다만, 원활한 서비스의 상담을 위해 상담 완료 후 내용을 3개월간 보유할 수 있으며, 전자상거래에서의 소비자보호에 관한 법률 등 타 법률에 의해 보존할 필요가 있는 경우에는 일정기간 보존합니다.</li>
+</ul>
+<p><b>▶ 개인정보 처리의 위탁 및 국외 보관</b></p>
+<ul>
+<li>접수된 상담 내용은 Google LLC(미국)의 서비스(Google 스프레드시트)에 저장, 관리됩니다.</li>
+<li>보관 기간은 위 '보유 및 이용기간'과 같습니다.</li>
+</ul>
+<p><b>▶ 동의 거부 권리 및 불이익</b></p>
+<ul><li>개인정보 수집 및 이용에 대한 동의를 거부할 수 있으며, 거부 시 온라인 상담 신청이 제한됩니다. 전화(02-6072-0531)로 문의하실 수 있습니다.</li></ul>
+<p><b>▶ 문의</b></p>
+<ul><li>개인정보 관련 문의 : 원 OPC 02-6072-0531</li></ul>
+  </div>
+</dialog>
+
 <script>
+function openPrivacy(e){
+  e.preventDefault();
+  const d=document.getElementById('privacy-dialog');
+  if(d&&d.showModal)d.showModal();
+}
+document.addEventListener('click',function(e){
+  const d=document.getElementById('privacy-dialog');
+  if(d&&e.target===d)d.close();
+});
+
 // 스크롤 네비
 window.addEventListener('scroll',()=>{
   document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
