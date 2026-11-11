@@ -1735,6 +1735,27 @@ footer{background:#1A1A1A;padding:56px 60px 32px}
 .privacy-dialog .pd-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #E5E5EA;font-size:17px;color:#1A1A1A}
 .privacy-dialog .pd-close{background:none;border:0;font-size:28px;line-height:1;cursor:pointer;color:#6E6E73;padding:0 4px}
 .privacy-dialog .pd-body{padding:16px 20px 20px;max-height:calc(80vh - 60px);overflow:auto}
+
+/* ── 1단계 정리: 큰 제목 10% 축소 · 글자 기준 통일 · 정렬선 · 카드 빈칸 ── */
+.hp-title{font-size:clamp(99px,15.3vw,225px)}
+.sub-h2{font-size:clamp(41px,6.66vw,97px)}
+.cat-cta-full{margin-top:16px}
+.process-steps .proc-step:last-child{grid-column:1/-1}
+#about .sec-desc,#products .sec-desc,#consult .consult-desc,#services .services-subtitle,#products .services-subtitle,#cases .services-subtitle,#process .services-subtitle,#consult .services-subtitle{color:#5A5A5E}
+#about .sec-desc,#products .sec-desc{font-weight:400}
+#about .about-card:not(:hover) .about-card-desc,#services .svc-card:not(:hover) .svc-desc,#process .proc-step:not(:hover) .proc-step-desc,#products .cat-card:not(:hover) .cat-products,#cases .case-desc{color:#5A5A5E}
+@media(min-width:901px){
+  .hp-sub .hp-inner{padding-left:max(60px,calc((100vw - 1200px)/2 + 60px))}
+  .hp-buy .hp-inner{padding-right:max(60px,calc((100vw - 1200px)/2 + 60px))}
+  .hs-strip{padding-left:max(60px,calc((100vw - 1200px)/2 + 60px));padding-right:max(60px,calc((100vw - 1200px)/2 + 60px))}
+  #about .sec-h2{font-size:52px}
+  #services .services-title,#products .services-title,#cases .services-title,#process .services-title,#consult .services-title{font-size:52px!important}
+  #services .services-subtitle,#products .services-subtitle,#cases .services-subtitle,#process .services-subtitle,#consult .services-subtitle{font-size:20px!important}
+  .cat-showcase .cat-card:last-child{grid-column:span 2}
+}
+@media(max-width:900px){
+  .hp-title{font-size:clamp(86px,28.8vw,144px)}
+}
 </style>
 <script type="application/ld+json">
 {
